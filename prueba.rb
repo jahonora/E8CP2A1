@@ -5,6 +5,8 @@ $data = []
 def readfile(route)
 	file = File.open(route, "r")
 	data = file.readlines.map{|e| e.gsub("\n","")}
+	file.close
+	
 	data.each_with_index do |v,i|
 		data[i] = v.split(", ")
 	end
